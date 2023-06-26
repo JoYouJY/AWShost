@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="./assets/index-f9496d0e.js"></script>
   </head>
   <body>
-    <p>If there is error or stuck, try reload: [ChainSafe V2 has bug on ConnectAccount()] <button style="width: 160px; height: 60px; font-size: 24px;" onclick="clearCache()">Reload</button>
+    <p>If there is error or loading stuck for unexpectly long, try reload button to clear cache. <button style="width: 160px; height: 60px; font-size: 24px;" onclick="clearCache()">Reload</button>
     </p>
     <script>
       function clearCache() {
@@ -101,11 +101,11 @@
           } else {
             var Heightoffset = 0;
           }
-          const myDiv = document.getElementById('myDiv');
+          //const myDiv = document.getElementById('myDiv');
           //      myDiv.textContent = window.innerWidth+"x"+window.innerHeight+"PR="+window.devicePixelRatio+" canvashight:"+ mainCanvas.style.height+
           //      " DW:"+Heightoffset;
-          myDiv.textContent = "openALPHA - expect bugs.";
-          myDiv.style.height = Heightoffset + 'px';
+          //myDiv.textContent = "openALPHA - expect bugs.";
+          //myDiv.style.height = Heightoffset + 'px';
           //remove fullscreen mode for Mobile since the size will be wrong.
           document.getElementById("unity-fullscreen-button").style.display = 'none';
         } else {
@@ -132,9 +132,9 @@
           // Set the new width and height of the canvas
           mainCanvas.style.width = maxWidth + 'px';
           mainCanvas.style.height = maxHeight + 'px';
-          const myDiv = document.getElementById('myDiv');
+          //const myDiv = document.getElementById('myDiv');
           //myDiv.textContent = window.innerWidth+"x"+window.innerHeight+"PR="+window.devicePixelRatio;
-          myDiv.textContent = "openALPHA - expect bugs. Next ClosedBETA(whitelist) expect Jun 2023";
+          
           if (document.getElementById("unity-container").clientHeight < window.innerHeight) {
             var Heightoffset = (window.innerHeight - document.getElementById("unity-container").clientHeight) / 2;
           } else {
@@ -142,8 +142,8 @@
           }
           //      myDiv.textContent = window.innerWidth+"x"+window.innerHeight+"PR="+window.devicePixelRatio+" canvashight:"+ mainCanvas.style.height+
           //      " DW:"+Heightoffset;
-          myDiv.textContent = "openALPHA - expect bugs.";
-          myDiv.style.height = Heightoffset + 'px';
+          //myDiv.textContent = "openALPHA - expect bugs.";
+          //myDiv.style.height = Heightoffset + 'px';
         }
       }
       resize();
@@ -226,7 +226,6 @@
       };
       document.body.appendChild(script);
     </script>
+    <script src="assets/index-f9496d0e.js"></script>
   </body>
-<script src="assets/index-f9496d0e.js"></script>
-
 </html>
