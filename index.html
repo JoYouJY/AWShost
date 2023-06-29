@@ -9,8 +9,7 @@
     <script type="module" crossorigin src="./assets/index-f9496d0e.js"></script>
   </head>
   <body>
-    <p>If there is error or loading stuck for unexpectly long, try reload button to clear cache. <button style="width: 160px; height: 60px; font-size: 24px;" onclick="clearCache()">Reload</button>
-    </p>
+    
     <script>
       function clearCache() {
         o = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -24,6 +23,12 @@
       }
     </script>
     <div id="unity-container" class="unity-desktop">
+      <div style="height: 80px;">If you encounter an error or the loading process takes an unexpectedly long time (~70MB), please try reloading the page and clearing your cache.<br>
+        <li style="font-family: 'Comic Sans MS', cursive; font-size: 18px;">ClearCache, Reload & Forgive Jojo:  
+<button style="width: 100px; height: 30px; font-size: 16px; background-color: #FFD700; color: #FFFFFF; border: none; border-radius: 8px; box-shadow: 2px 2px 4px #888888;" onclick="clearCache()">OK!</button> </li>
+
+      </div>
+      
       <canvas id="unity-canvas" width=1280 height=720></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -32,10 +37,12 @@
         </div>
       </div>
       <div id="unity-warning"></div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+      <!--<div id="unity-footer">
+        <div id="unity-webgl-logo"></div>-->
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Fantom-Adventure-RPG</div>
+        <div id="unity-build-title">Full Screen mode</div>
+        <div style="font-family: 'Arial Black', sans-serif; font-size: 36px; color: #0077ff; text-shadow: 2px 2px 4px #5ab0e9;">FANTOM ADVENTURE RPG </div>
+        <div>Fantom 2023 @ This prototype blockchain game for the Hackathon does not require or seek any approval or permission to transfer your assets. Stay Safe.</div>
       </div>
     </div>
     <script>
@@ -67,6 +74,13 @@
           //     document.getElementById("main").style.textAlign = "center";
           //   } else {
           document.getElementById("unity-container").style.textAlign = "center";
+
+          var fullscreenButton = document.getElementById("unity-fullscreen-button");
+          fullscreenButton.style.display = "none";
+
+          var buildTitle = document.getElementById("unity-build-title");
+          buildTitle.style.display = "none";
+
           //    mainCanvas.style.position = "relative";
           //    mainCanvas.style.left = Math.abs(((1280 - document.body.offsetWidth)/4)) + 'px';
           //    mainCanvas.style.left = 70 + 'px';
