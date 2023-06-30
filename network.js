@@ -22,7 +22,7 @@ Used to set the network: https://chainlist.org/
 338 Cronos Testnet
 */
 
-window.web3ChainId = 4002;
+window.web3ChainId = 250;
 
 // Onboard JS chain config objects
 
@@ -41,9 +41,18 @@ window.web3ChainId = 4002;
 
 window.networks = [
   {
-    id: 4002,
-    label: "Fantom Testnet",
+    id: 250,
+    label: "Fantom Opera",
     token: "ftm",
-    rpcUrl: `https://rpc.ankr.com/fantom_testnet/`,
+    rpcUrl: `https://rpc.ankr.com/fantom/`,
   }
 ]
+
+// window.networks = [
+//   {
+//     id: 4002,
+//     label: "Fantom Testnet",
+//     token: "ftm",
+//     rpcUrl: `https://rpc.ankr.com/fantom_testnet/`,
+//   }
+// ]
