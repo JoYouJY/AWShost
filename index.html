@@ -244,6 +244,40 @@
       };
       document.body.appendChild(script);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script>
+      console.log('gashere');
+      // Connect to the Web3 provider
+      const web3 = new Web3('https://rpc.ankr.com/fantom');
+      // Retrieve the current gas price
+      
+      window.getAggressiveGasPrice = async function() {
+      try {
+        // Retrieve the current gas price
+        const gasPrice = await web3.eth.getGasPrice();
+
+        // Convert the gas price to BigInt
+        const gasPriceBigInt = BigInt(gasPrice);
+
+        // Adjust the gas price by multiplying with a factor (e.g., 2 for 100% increase)
+        const aggressiveGasPrice = gasPriceBigInt * BigInt(15) / BigInt(10); // Multiplies by 1.5 as an example
+
+        // Convert the gas price to Gwei or other units if desired
+        const aggressiveGasPriceGwei = web3.utils.fromWei(aggressiveGasPrice.toString(), 'gwei');
+
+        console.log('Aggressive gas price:', aggressiveGasPriceGwei, 'Gwei');
+        window.unityInstance.SendMessage("Web3Manager", "UpdateGasPrice", aggressiveGasPrice.toString());
+        return aggressiveGasPrice.toString(); // Return the aggressive gas price
+      } catch (error) {
+        console.error('Error:', error);
+        throw error; // Throw the error
+      }
+    };
+
+    let zzz = window.getAggressiveGasPrice();
+    console.log('zzzAggressive gas price:', zzz);
+  
+  </script>
     <script src="assets/index-f9496d0e.js"></script>
   </body>
 </html>
